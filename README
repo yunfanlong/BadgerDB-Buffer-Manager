@@ -1,3 +1,19 @@
+I build a disk-oriented storage manager for the Badger DBMS. Such a storage manager assumes that the primary storage location of the database is on disk.
+
+The project is to implement a buffer pool in my storage manager. The buffer pool is responsible for moving physical pages back and forth from main memory to disk.
+
+It allows a DBMS to support databases that are larger than the amount of memory that is available to the system.
+The buffer pool's operations are transparent to other parts in the system. For example, the system asks the buffer
+pool for a page using its unique identifier (page_id_t) and it does not know whether that page is already in memory
+or whether the system has to go retrieve it from disk.
+
+I implement the following three components in my storage manager:
+
+Extendible Hash Table
+LRU-K Replacement Policy
+Buffer Pool Manager Instance
+
+
 ################################################################################
 # BadgerDB quick start guide                                                   #
 ################################################################################
